@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  dev:
+    image: postgres:13
+    ports:
+      - 3967:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: tappera
+    networks:
+      - new
+  test:
+    image: postgres:13
+    ports:
+      - 3968:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: tappera
+    networks:
+      - new
+networks:
+  new:
